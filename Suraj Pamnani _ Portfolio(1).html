@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suraj Pamnani | Aspiring Software Developer</title>
+<meta name="description" content="Suraj Pamnani - Aspiring Software Developer. Projects in Web Development, Python, and Databases. Based in Ahmedabad, India.">
+<meta property="og:title" content="Suraj Pamnani | Portfolio">
+<meta property="og:description" content="Aspiring Software Developer with projects in Web, Python, and DBMS. Open to Internships · Summer 2026.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FDFCF9;
+  --card:#F4F0E6;
+  --card2:#EBE2CE;
+  --blue:#A6791E;
+  --blue-light:#C99A3C;
+  --blue-rgb:166,121,30;
+  --blue-dim:rgba(var(--blue-rgb),0.14);
+  --green:#3C7A4A;
+  --green-rgb:60,122,74;
+  --green-dim:rgba(var(--green-rgb),0.12);
+  --text:#211A11;
+  --muted:rgba(33,26,17,0.58);
+  --dim:rgba(33,26,17,0.3);
+  --border:rgba(166,121,30,0.22);
+  --shelf:#E3D4AC;
+  --plank1:#C9A066;--plank2:#96713D;
+  --nav-bg:rgba(253,252,249,.9);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+body.dark{
+  --bg:#15110D;--card:#231B13;--card2:#2C2116;
+  --blue:#D3AC47;--blue-light:#E8CB7A;--blue-rgb:211,172,71;--blue-dim:rgba(var(--blue-rgb),.15);
+  --green:#5B8F63;--green-rgb:91,143,99;--green-dim:rgba(var(--green-rgb),.12);
+  --text:#F3ECDD;--muted:rgba(243,236,221,.55);--dim:rgba(243,236,221,.25);
+  --border:rgba(var(--blue-rgb),.18);--shelf:#241B11;
+  --plank1:#6B4A28;--plank2:#2E1D10;
+  --nav-bg:rgba(21,17,13,.93);
+}
+
+/* REVEAL */
+.sr{opacity:0;transform:translateY(22px);transition:opacity .72s cubic-bezier(.25,1,.5,1),transform .72s cubic-bezier(.25,1,.5,1)}
+.sr.show{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.42s}
+
+/* NAV */
+.nav-wrap{position:sticky;top:env(safe-area-inset-top,0px);z-index:999;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav{padding:.95rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;gap:1rem;flex-wrap:wrap}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:var(--text)}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;cursor:pointer}
+.nav-links a:hover{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:.9rem}
+.avail-tag{display:flex;align-items:center;gap:6px;background:var(--green-dim);border:1px solid rgba(var(--green-rgb),.25);padding:4px 12px;border-radius:20px}
+.avail-tag span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--green);white-space:nowrap}
+.blink{width:6px;height:6px;border-radius:50%;background:var(--green);animation:bl 2s infinite;flex-shrink:0}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.mode-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:.88rem;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.mode-btn:hover{border-color:var(--blue);color:var(--blue)}
+
+/* HERO */
+.hero-outer{max-width:1200px;margin:0 auto}
+.hero{padding:5rem 2.5rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero-ghost{position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(10rem,28vw,22rem);color:transparent;-webkit-text-stroke:1px rgba(var(--blue-rgb),.06);pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
+.hero-eye{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,12vw,9rem);letter-spacing:.04em;line-height:.88;color:var(--text);margin-bottom:.5rem}
+.hero-name span{color:var(--blue)}
+.hero-role{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,3.5vw,2.6rem);letter-spacing:.08em;color:var(--dim);margin-bottom:1.4rem;min-height:2.8rem}
+.cur{display:inline-block;width:3px;height:.9em;background:var(--blue);margin-left:2px;vertical-align:middle;animation:cur 1s step-end infinite}
+@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+.impact{font-size:1.05rem;line-height:1.85;color:var(--text);max-width:580px;font-weight:400;margin-bottom:.7rem}
+.impact span{color:var(--blue)}
+.diff-line{font-size:.88rem;color:var(--muted);max-width:560px;line-height:1.75;font-weight:300;margin-bottom:2rem;border-left:2px solid rgba(var(--blue-rgb),.3);padding-left:1rem;font-style:italic}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn-p{background:var(--blue);color:#1A130C;padding:.78rem 2rem;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;font-weight:700;transition:all .25s;text-decoration:none;display:inline-block;will-change:transform;border-radius:4px;box-shadow:0 2px 12px rgba(var(--blue-rgb),.22)}
+.btn-p:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(var(--blue-rgb),.35)}
+.btn-o{background:transparent;color:var(--text);border:1px solid rgba(var(--blue-rgb),.3);padding:.78rem 2rem;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;border-radius:4px}
+.btn-o:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn-g{background:transparent;color:var(--dim);border:1px solid var(--border);padding:.7rem 1.6rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;border-radius:4px}
+.btn-g:hover{border-color:var(--green);color:var(--green)}
+
+/* STATS */
+.stats-wrap{border-bottom:1px solid var(--border)}
+.stats-row{display:flex;flex-wrap:wrap;max-width:1200px;margin:0 auto;border-top:1px solid var(--border)}
+.stat{flex:1;min-width:110px;padding:1.2rem 2rem;border-right:1px solid var(--border);transition:background .3s;position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s}
+.stat:hover::after{transform:scaleX(1)}
+.stat:last-child{border-right:none}
+.stat:hover{background:rgba(var(--blue-rgb),.04)}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--blue);line-height:1}
+.stat-l{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:2px}
+
+/* SECTIONS */
+.sec-wrap{max-width:1200px;margin:0 auto}
+.sec{padding:3.5rem 2.5rem;border-bottom:1px solid var(--border)}
+.sec-top{display:flex;align-items:baseline;gap:.8rem;margin-bottom:2rem}
+.sec-num{font-family:'Bebas Neue',sans-serif;font-size:.88rem;color:rgba(var(--blue-rgb),.4);letter-spacing:.18em}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--text)}
+
+/* FEATURED */
+.feat-card{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(var(--blue-rgb),.06)}
+.feat-card::before{content:'FEATURED';position:absolute;top:1.2rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:.68rem;letter-spacing:.2em;color:var(--blue);border:1px solid rgba(var(--blue-rgb),.25);padding:3px 10px;border-radius:20px;background:var(--blue-dim)}
+.feat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--green))}
+@media(max-width:720px){.feat-card,.about-grid,.duo-grid{grid-template-columns:1fr!important}}
+.feat-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;background:var(--green-dim);padding:4px 10px;border-radius:20px;border:1px solid rgba(var(--green-rgb),.2)}
+.feat-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.05em;color:var(--text);line-height:1;margin-bottom:.8rem}
+.feat-desc{font-size:.86rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.1rem}
+.feat-ul{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:1.3rem}
+.feat-ul li{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.03em;color:var(--muted);padding-left:1.2rem;position:relative}
+.feat-ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:.6rem}
+.feat-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.4rem}
+.feat-chip{font-family:'Space Mono',monospace;font-size:.56rem;padding:3px 9px;border:1px solid rgba(var(--blue-rgb),.2);color:var(--blue-light);border-radius:20px;background:var(--blue-dim)}
+.feat-links{display:flex;gap:.7rem;flex-wrap:wrap}
+/* MOCKUP */
+.feat-preview{background:#1C140C;border-radius:10px;overflow:hidden;height:220px;border:1px solid rgba(var(--blue-rgb),.12);display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.mbar{background:#140D08;height:26px;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid rgba(var(--blue-rgb),.08);flex-shrink:0}
+.mdot{width:7px;height:7px;border-radius:50%}
+.mscreen{flex:1;background:#19120B;padding:12px;display:flex;flex-direction:column;gap:7px;overflow:hidden}
+.mrow{display:flex;gap:8px;flex:1;min-height:0}
+.msidebar{width:32px;background:#2A2015;border-radius:3px;flex-shrink:0}
+.mmain{flex:1;display:flex;flex-direction:column;gap:5px}
+.mtitle{height:7px;background:var(--green);border-radius:3px;width:55%}
+.mline{height:4px;background:rgba(var(--blue-rgb),.12);border-radius:3px}
+.mplayer{height:34px;background:#140D08;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:9px;flex-shrink:0;border:1px solid rgba(var(--blue-rgb),.1)}
+.mplay{width:18px;height:18px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:7px;color:#000;flex-shrink:0}
+.mprog{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.mprogf{height:100%;width:40%;background:var(--green);border-radius:3px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.atext{font-size:.9rem;line-height:1.85;color:var(--muted);font-weight:300}
+.atext strong{color:var(--text);font-weight:500}
+.mini-t{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem}
+.ll{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.ll li{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.03em;color:var(--dim);padding-left:1.1rem;position:relative}
+.ll li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:.58rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.tag{font-family:'Space Mono',monospace;font-size:.56rem;padding:4px 10px;border:1px solid rgba(var(--blue-rgb),.2);color:var(--blue-light);letter-spacing:.08em;text-transform:uppercase;border-radius:20px;background:var(--blue-dim);transition:all .2s}
+.tag:hover{background:rgba(var(--blue-rgb),.25);border-color:var(--blue)}
+
+/* STRENGTHS */
+.str-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.str-box{background:var(--bg);padding:1.4rem;transition:background .25s;position:relative;overflow:hidden}
+.str-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.str-box:hover{background:var(--card)}
+.str-box:hover::before{transform:scaleX(1)}
+.str-icon{font-size:1.3rem;margin-bottom:.55rem}
+.str-title{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.06em;color:var(--text);margin-bottom:.45rem}
+.str-ul{list-style:none;display:flex;flex-direction:column;gap:3px}
+.str-ul li{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--dim);letter-spacing:.02em;padding-left:.85rem;position:relative}
+.str-ul li::before{content:'·';position:absolute;left:0;color:var(--blue)}
+
+/* BOOKSHELF */
+.shelf-u{margin-bottom:2.4rem}
+.shelf-hdr{display:flex;align-items:baseline;gap:.8rem;margin-bottom:.85rem;padding:0 .3rem}
+.sh-n{font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(var(--blue-rgb),.3);letter-spacing:.15em}
+.sh-t{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.08em;color:var(--muted)}
+.sh-c{font-family:'Space Mono',monospace;font-size:.53rem;color:var(--dim);margin-left:auto}
+.shelf-frame{background:var(--shelf);background-image:radial-gradient(ellipse 90% 70% at 50% -15%,rgba(255,255,255,.05),transparent 70%);border:1px solid rgba(var(--blue-rgb),.12);border-radius:8px;padding:1.1rem 1.1rem 0;position:relative;box-shadow:inset 0 1px 0 rgba(var(--blue-rgb),.08),inset 0 0 28px rgba(0,0,0,.22)}
+.shelf-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--green),var(--blue));border-radius:8px 8px 0 0}
+.books{display:flex;align-items:flex-end;gap:7px;min-height:130px;flex-wrap:wrap}
+.book{position:relative;cursor:pointer;flex-shrink:0;transition:transform .4s cubic-bezier(.34,1.56,.64,1);will-change:transform;transform:translateZ(0) rotate(var(--tilt,0deg))}
+.book:nth-child(3n+1){--tilt:.6deg}
+.book:nth-child(3n+2){--tilt:-.5deg}
+.book:nth-child(5n){--tilt:-1deg}
+.book:hover,.book.active{transform:translateY(-26px) scale(1.05) rotate(0deg)!important;z-index:50}
+.book:hover .st,.book.active .st{opacity:0}
+.book:hover .tip,.book.active .tip{opacity:1;transform:translateY(0) translateX(-50%);pointer-events:auto}
+.book:hover .spine,.book.active .spine{filter:drop-shadow(0 22px 16px rgba(0,0,0,.5))}
+.spine{border-radius:2px 4px 4px 2px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;will-change:transform,filter;transform:translateZ(0);filter:drop-shadow(0 3px 3px rgba(0,0,0,.4));transition:filter .4s cubic-bezier(.34,1.56,.64,1)}
+.spine::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0));z-index:1}
+.spine::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(100deg,rgba(0,0,0,.4) 0%,rgba(255,255,255,.18) 9%,rgba(255,255,255,.02) 22%,rgba(0,0,0,0) 55%,rgba(0,0,0,.28) 86%,rgba(0,0,0,.55) 100%),linear-gradient(to bottom,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 16%,rgba(0,0,0,0) 72%,rgba(0,0,0,.3) 100%);mix-blend-mode:overlay}
+.spine-top{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(to bottom,#F3ECDD 0%,#D8CBA5 55%,#96835A 100%);box-shadow:0 1px 2px rgba(0,0,0,.4) inset;border-radius:0 4px 0 0;z-index:1}
+.st{font-family:'Bebas Neue',sans-serif;writing-mode:vertical-rl;transform:rotate(180deg);font-size:.68rem;letter-spacing:.18em;color:rgba(248,242,228,.96);padding:9px 5px;position:relative;z-index:3;transition:opacity .15s;text-shadow:0 1px 2px rgba(0,0,0,.75),0 -1px 0 rgba(255,255,255,.1)}
+/* TOOLTIP */
+.tip{position:absolute;bottom:calc(100% + 13px);left:50%;transform:translateY(10px) translateX(-50%);width:248px;background:var(--card2);border:1px solid rgba(var(--blue-rgb),.25);border-radius:10px;padding:.95rem 1.05rem;opacity:0;transition:all .28s cubic-bezier(.34,1.2,.64,1);pointer-events:none;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.35),0 0 0 1px rgba(var(--blue-rgb),.05)}
+.tip::before{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid rgba(var(--blue-rgb),.25)}
+.tip::after{content:'';position:absolute;bottom:-6.5px;left:50%;transform:translateX(-50%);border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid var(--card2)}
+.tc{font-family:'Space Mono',monospace;font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.3rem}
+.tt{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.05em;color:var(--text);line-height:1.1;margin-bottom:.4rem}
+.tb{font-size:.7rem;color:var(--muted);line-height:1.65;font-weight:300}
+.tl{list-style:none;margin:.42rem 0;display:flex;flex-direction:column;gap:3px}
+.tl li{font-size:.65rem;color:var(--muted);font-family:'Space Mono',monospace;padding-left:.95rem;position:relative}
+.tl li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:.57rem}
+.tch{display:flex;flex-wrap:wrap;gap:3px;margin-top:.52rem}
+.chip{font-family:'Space Mono',monospace;font-size:.52rem;padding:2px 8px;border:1px solid rgba(var(--blue-rgb),.2);color:var(--blue-light);border-radius:20px;background:var(--blue-dim);letter-spacing:.06em}
+.chip.g{border-color:rgba(var(--green-rgb),.2);color:var(--green);background:var(--green-dim)}
+.tbtns{display:flex;gap:5px;margin-top:.6rem;flex-wrap:wrap}
+.tbtn{font-family:'Space Mono',monospace;font-size:.57rem;padding:4px 10px;border:1px solid rgba(var(--blue-rgb),.25);color:var(--blue-light);border-radius:20px;text-decoration:none;letter-spacing:.06em;transition:all .2s;cursor:pointer;background:var(--blue-dim)}
+.tbtn:hover{background:rgba(var(--blue-rgb),.25);border-color:var(--blue)}
+.plank{height:16px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.09) 0 1px,transparent 1px 7px),linear-gradient(to bottom,var(--plank1) 0%,var(--plank1) 40%,var(--plank2) 100%);box-shadow:inset 0 2px 2px rgba(255,255,255,.1),inset 0 -4px 6px rgba(0,0,0,.35);border-radius:0 0 8px 8px;margin:0 -1.1rem}
+.plank-sh{height:10px;background:linear-gradient(to bottom,rgba(0,0,0,.4),transparent);margin:0 -1.1rem}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+
+/* GITHUB */
+.gh-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;transition:border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.gh-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--green))}
+.gh-card:hover{border-color:rgba(var(--blue-rgb),.35);box-shadow:0 0 32px rgba(var(--blue-rgb),.08)}
+.gh-eyebrow{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem}
+.gh-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.06em;color:var(--text);margin-bottom:.4rem}
+.gh-desc{font-size:.84rem;color:var(--muted);font-weight:300;max-width:420px;line-height:1.7}
+.gh-stats{display:flex;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+.gh-sn{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--blue);line-height:1}
+.gh-sl{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+.gh-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--blue);color:#1A130C;padding:.85rem 1.8rem;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all .25s;flex-shrink:0;border:none;box-shadow:0 2px 12px rgba(var(--blue-rgb),.2)}
+.gh-btn:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(var(--blue-rgb),.3)}
+
+/* CONTACT */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:1.5rem}
+.cc{background:var(--bg);padding:1.3rem;transition:background .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{background:var(--card)}
+.cc:hover::after{transform:scaleX(1)}
+.ccl{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.38rem}
+.ccv{font-size:.82rem;color:var(--text);word-break:break-all}
+.ccv a{color:var(--text);text-decoration:none;transition:color .2s}
+.ccv a:hover{color:var(--blue)}
+
+.footer{padding:1.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border);max-width:1200px;margin:0 auto}
+.ft{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--dim)}
+
+/* GLOW EFFECTS */
+.glow-blue{box-shadow:0 0 0 1px rgba(var(--blue-rgb),.1),0 8px 32px rgba(var(--blue-rgb),.08)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrap">
+<nav>
+  <div class="nav-logo">S<span>P</span></div>
+  <ul class="nav-links">
+    <li><a onclick="go('about')">About</a></li>
+    <li><a onclick="go('featured')">Projects</a></li>
+    <li><a onclick="go('skills')">Skills</a></li>
+    <li><a onclick="go('github')">GitHub</a></li>
+    <li><a onclick="go('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="avail-tag"><div class="blink"></div><span>Open to Internships · Summer 2026</span></div>
+    <button class="mode-btn" onclick="toggleMode()" title="Toggle theme">🌗</button>
+  </div>
+</nav>
+</div>
+
+<!-- HERO -->
+<div class="hero-outer">
+<section class="hero">
+  <div class="hero-ghost">SP</div>
+  <p class="hero-eye sr">CS Student · Ahmedabad, India · 2026</p>
+  <h1 class="hero-name sr d1">Suraj<br><span>Pamnani</span></h1>
+  <div class="hero-role sr d2" id="typewriter">Aspiring Software Developer<span class="cur"></span></div>
+  <p class="impact sr d2">I build web apps and systems that solve real problems — from <span>interactive UIs</span> to <span>data-driven applications.</span></p>
+  <p class="diff-line sr d3">"What sets me apart is my focus on both design and logic — I don't just build apps, I build experiences."</p>
+  <div class="cta-row sr d3">
+    <a class="btn-p" onclick="go('featured')">View Projects</a>
+    <a class="btn-o" onclick="go('contact')">Contact Me</a>
+    <a class="btn-g" href="/mnt/user-data/uploads/Suraj_Resume.pdf" download="Suraj_Pamnani_Resume.pdf">Download Resume ↓</a>
+  </div>
+</section>
+</div>
+
+<!-- STATS -->
+<div class="stats-wrap sr">
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Real-World Projects</div></div>
+  <div class="stat"><div class="stat-n">4+</div><div class="stat-l">Certified Skills</div></div>
+  <div class="stat"><div class="stat-n">1000+</div><div class="stat-l">Lines of Code</div></div>
+  <div class="stat"><div class="stat-n">2028</div><div class="stat-l">Graduation Year</div></div>
+</div>
+</div>
+
+<!-- FEATURED -->
+<div class="sec-wrap" id="featured">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">★</span><span class="sec-title">Featured Project</span></div>
+  <div class="feat-card glow-blue sr d1">
+    <div>
+      <span class="feat-badge">⭐ Best Work</span>
+      <div class="feat-title">Spotify Clone</div>
+      <div class="feat-desc">Built a fully functional music streaming interface inspired by Spotify — real-time playback, playlist management and a pixel-perfect responsive layout.</div>
+      <ul class="feat-ul">
+        <li>Implemented audio playback engine with play, pause, skip &amp; seek</li>
+        <li>Built dynamic playlist system with track switching and queue management</li>
+        <li>Fully responsive layout across mobile, tablet and desktop</li>
+        <li>Pixel-perfect UI replicating Spotify's design language</li>
+      </ul>
+      <div class="feat-chips"><span class="feat-chip">HTML5</span><span class="feat-chip">CSS3</span><span class="feat-chip">JavaScript</span><span class="feat-chip">Responsive</span><span class="feat-chip">UI/UX</span></div>
+      <div class="feat-links">
+        <a class="btn-p" href="https://github.com/Suraj-Pamnani/spotify-clone" target="_blank">GitHub ↗</a>
+        <a class="btn-o" href="#" target="_blank">Live Demo ↗</a>
+      </div>
+    </div>
+    <div class="feat-preview">
+      <div class="mbar"><div class="mdot" style="background:#ff5f57"></div><div class="mdot" style="background:#ffbd2e"></div><div class="mdot" style="background:#28c840"></div></div>
+      <div class="mscreen">
+        <div class="mrow">
+          <div class="msidebar"></div>
+          <div class="mmain">
+            <div class="mtitle"></div>
+            <div class="mline" style="width:78%"></div>
+            <div class="mline" style="width:58%"></div>
+            <div class="mline" style="width:70%"></div>
+            <div class="mline" style="width:85%"></div>
+            <div class="mline" style="width:52%"></div>
+            <div class="mline" style="width:67%"></div>
+          </div>
+        </div>
+        <div class="mplayer">
+          <div class="mplay">▶</div>
+          <div class="mprog"><div class="mprogf"></div></div>
+          <span style="font-size:7px;color:rgba(255,255,255,.3);font-family:monospace">2:41</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ABOUT -->
+<div class="sec-wrap" id="about">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">01</span><span class="sec-title">About Me</span></div>
+  <div class="about-grid">
+    <div>
+      <p class="atext sr d1">I'm a <strong>Computer Science undergraduate</strong> at Indus University, Ahmedabad. I'm passionate about building interactive web apps and designing efficient database systems that solve real problems.</p>
+      <p class="atext sr d2" style="margin-top:.9rem">I believe in learning by doing — every project I ship teaches me something new. Currently deepening my skills in <strong>data analytics</strong> and <strong>backend development</strong>, and actively seeking internships where I can grow fast and contribute meaningfully.</p>
+      <div class="tag-row sr d3"><span class="tag">Problem Solver</span><span class="tag">Fast Learner</span><span class="tag">Team Player</span><span class="tag">Detail-Oriented</span></div>
+    </div>
+    <div class="sr d2">
+      <p class="mini-t" style="margin-top:0">Currently Learning</p>
+      <ul class="ll">
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Backend Development (Node.js / Express)</li>
+        <li>Data Analytics &amp; Visualisation</li>
+        <li>REST API Design Patterns</li>
+        <li>React.js Fundamentals</li>
+      </ul>
+      <p class="mini-t" style="margin-top:1.3rem">Experience</p>
+      <ul class="ll">
+        <li>3 personal projects shipped end-to-end</li>
+        <li>NPTEL Certified — Database Management</li>
+        <li>Certified in Web Dev &amp; Python</li>
+        <li>Regularly building &amp; publishing on GitHub</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- STRENGTHS -->
+<div class="sec-wrap">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">02</span><span class="sec-title">Technical Strengths</span></div>
+  <div class="str-grid sr d1">
+    <div class="str-box"><div class="str-icon">🗂️</div><div class="str-title">Data Structures</div><ul class="str-ul"><li>Arrays &amp; Linked Lists</li><li>Stacks &amp; Queues</li><li>Hash Tables</li><li>Search &amp; Sort algorithms</li></ul></div>
+    <div class="str-box"><div class="str-icon">🗄️</div><div class="str-title">DBMS Concepts</div><ul class="str-ul"><li>Normalisation (1NF–3NF)</li><li>Joins &amp; Subqueries</li><li>ER Diagram Design</li><li>Transaction Management</li></ul></div>
+    <div class="str-box"><div class="str-icon">🧩</div><div class="str-title">OOP Principles</div><ul class="str-ul"><li>Encapsulation &amp; Abstraction</li><li>Inheritance &amp; Polymorphism</li><li>Class Design Patterns</li><li>Modular architecture</li></ul></div>
+    <div class="str-box"><div class="str-icon">🌐</div><div class="str-title">Web Fundamentals</div><ul class="str-ul"><li>Semantic HTML5</li><li>Responsive CSS (Flexbox/Grid)</li><li>DOM &amp; event handling</li><li>REST API consumption</li></ul></div>
+  </div>
+</section>
+</div>
+
+<!-- SKILLS + PROJECTS SHELF -->
+<div class="sec-wrap" id="skills">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">03</span><span class="sec-title">Skills &amp; Projects — The Shelf</span></div>
+  <p class="sr" style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);margin-bottom:2rem">Hover or tap any book to read details</p>
+
+  <!-- SKILLS SHELF -->
+  <div class="shelf-u sr d1">
+    <div class="shelf-hdr"><span class="sh-n">—</span><span class="sh-t">Tech Stack</span><span class="sh-c">8 volumes</span></div>
+    <div class="shelf-frame"><div class="books">
+      <div class="book"><div class="spine" style="width:54px;height:165px;background:#0d2b1a"><div class="spine-top"></div><div class="st">Python</div></div><div class="tip"><div class="tc">Core · Certified</div><div class="tt">Python</div><div class="tb">Certified. Scripts, API integrations and the live News App.</div><ul class="tl"><li>Scripting &amp; automation</li><li>REST API calls</li><li>Data processing</li></ul><div class="tch"><span class="chip g">Certified ✓</span><span class="chip">Python 3</span></div></div></div>
+      <div class="book"><div class="spine" style="width:46px;height:146px;background:#2a1020"><div class="spine-top"></div><div class="st">HTML CSS</div></div><div class="tip"><div class="tc">Frontend</div><div class="tt">HTML &amp; CSS</div><div class="tb">Responsive layouts powering the Spotify Clone UI.</div><ul class="tl"><li>Flexbox &amp; Grid</li><li>Responsive design</li></ul><div class="tch"><span class="chip">HTML5</span><span class="chip">CSS3</span></div></div></div>
+      <div class="book"><div class="spine" style="width:58px;height:182px;background:#0e1e3a"><div class="spine-top"></div><div class="st">JavaScript</div></div><div class="tip"><div class="tc">Frontend Logic</div><div class="tt">JavaScript</div><div class="tb">All interactive UI logic and audio controls in the Spotify Clone.</div><ul class="tl"><li>DOM manipulation</li><li>Event-driven logic</li><li>ES6+ features</li></ul><div class="tch"><span class="chip">ES6+</span><span class="chip">DOM</span></div></div></div>
+      <div class="book"><div class="spine" style="width:50px;height:155px;background:#221a08"><div class="spine-top"></div><div class="st">MySQL</div></div><div class="tip"><div class="tc">Database · NPTEL ✓</div><div class="tt">MySQL</div><div class="tb">Designed a full company DB. NPTEL certified in DBMS.</div><ul class="tl"><li>Schema design</li><li>Complex queries</li><li>Normalisation</li></ul><div class="tch"><span class="chip g">NPTEL ✓</span><span class="chip">SQL</span></div></div></div>
+      <div class="book"><div class="spine" style="width:62px;height:190px;background:#1a0e3a"><div class="spine-top"></div><div class="st">Data Analytics</div></div><div class="tip"><div class="tc">Analytics</div><div class="tt">Data Analytics</div><div class="tb">Extracting insights, trend analysis and data-driven decisions.</div><ul class="tl"><li>Pattern recognition</li><li>Visualisation thinking</li></ul><div class="tch"><span class="chip">Analytics</span><span class="chip">Insights</span></div></div></div>
+      <div class="book"><div class="spine" style="width:46px;height:150px;background:#0e2a1a"><div class="spine-top"></div><div class="st">OOP</div></div><div class="tip"><div class="tc">Paradigm</div><div class="tt">OOP</div><div class="tb">Classes, inheritance, encapsulation for clean code.</div><ul class="tl"><li>Inheritance</li><li>Design patterns</li></ul><div class="tch"><span class="chip">Python OOP</span></div></div></div>
+      <div class="book"><div class="spine" style="width:48px;height:158px;background:#1e1220"><div class="spine-top"></div><div class="st">Git</div></div><div class="tip"><div class="tc">Version Control</div><div class="tt">Git &amp; GitHub</div><div class="tb">All projects version-controlled. Comfortable with branching workflows.</div><div class="tch"><span class="chip">GitHub</span><span class="chip">Branches</span></div></div></div>
+      <div class="book"><div class="spine" style="width:52px;height:162px;background:#102030"><div class="spine-top"></div><div class="st">Web Dev</div></div><div class="tip"><div class="tc">Full-Stack · Certified</div><div class="tt">Web Dev</div><div class="tb">Certified in full-stack web development. Builds apps frontend to backend.</div><div class="tch"><span class="chip g">Certified ✓</span></div></div></div>
+    </div><div class="plank"></div><div class="plank-sh"></div></div>
+  </div>
+
+  <!-- PROJECTS SHELF -->
+  <div class="shelf-u sr d2">
+    <div class="shelf-hdr"><span class="sh-n">—</span><span class="sh-t">All Projects</span><span class="sh-c">3 volumes</span></div>
+    <div class="shelf-frame"><div class="books">
+      <div class="book"><div class="spine" style="width:76px;height:205px;background:#0a2015"><div class="spine-top"></div><div class="st">Spotify Clone</div></div><div class="tip" style="width:255px"><div class="tc">Project 01 · Featured</div><div class="tt">Spotify Clone</div><div class="tb">Full music streaming UI with real-time playback and responsive layout.</div><ul class="tl"><li>Audio engine from scratch</li><li>Playlist &amp; queue management</li><li>Fully responsive design</li></ul><div class="tch"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span></div><div class="tbtns"><a class="tbtn" href="https://github.com/Suraj-Pamnani/spotify-clone" target="_blank">GitHub ↗</a><a class="tbtn" href="#">Live ↗</a></div></div></div>
+      <div class="book"><div class="spine" style="width:84px;height:194px;background:#1a1408"><div class="spine-top"></div><div class="st">Company DB</div></div><div class="tip" style="width:255px"><div class="tc">Project 02 · Database</div><div class="tt">Company Database</div><div class="tb">Normalised relational DB for employees, departments and payroll.</div><ul class="tl"><li>Full schema normalisation</li><li>Complex SQL reporting</li><li>Applied NPTEL knowledge</li></ul><div class="tch"><span class="chip">MySQL</span><span class="chip g">NPTEL ✓</span></div><div class="tbtns"><a class="tbtn" href="https://github.com/Suraj-Pamnani/company-database" target="_blank">GitHub ↗</a></div></div></div>
+      <div class="book"><div class="spine" style="width:72px;height:208px;background:#0e1228"><div class="spine-top"></div><div class="st">News App</div></div><div class="tip" style="width:255px"><div class="tc">Project 03 · Python</div><div class="tt">News App</div><div class="tb">Python app fetching live headlines via REST API with category filtering.</div><ul class="tl"><li>Real-time API data fetch</li><li>Category filtering system</li><li>Clean readable UI</li></ul><div class="tch"><span class="chip">Python</span><span class="chip">REST API</span></div><div class="tbtns"><a class="tbtn" href="https://github.com/Suraj-Pamnani/news-app" target="_blank">GitHub ↗</a></div></div></div>
+    </div><div class="plank"></div><div class="plank-sh"></div></div>
+  </div>
+
+  <!-- EDU + LANG -->
+  <div class="duo-grid">
+    <div class="shelf-u sr d1">
+      <div class="shelf-hdr"><span class="sh-n">—</span><span class="sh-t">Education</span><span class="sh-c">4 vol</span></div>
+      <div class="shelf-frame"><div class="books">
+        <div class="book"><div class="spine" style="width:74px;height:208px;background:#1a1408"><div class="spine-top"></div><div class="st">BSc CS</div></div><div class="tip"><div class="tc">Undergraduate</div><div class="tt">B.Sc. Computer Science</div><div class="tb">Indus University, Ahmedabad. Expected July 2028.</div><div class="tch"><span class="chip">2024–2028</span><span class="chip g">In Progress</span></div></div></div>
+        <div class="book"><div class="spine" style="width:60px;height:182px;background:#0a1e14"><div class="spine-top"></div><div class="st">NPTEL DB</div></div><div class="tip"><div class="tc">Certification</div><div class="tt">NPTEL — DBMS</div><div class="tb">Certified in RDBMS, SQL, ER modelling and normalisation.</div><div class="tch"><span class="chip g">Certified ✓</span></div></div></div>
+        <div class="book"><div class="spine" style="width:54px;height:168px;background:#0e0e2a"><div class="spine-top"></div><div class="st">Web Dev</div></div><div class="tip"><div class="tc">Certification</div><div class="tt">Full-Stack Web Dev</div><div class="tb">Certified in HTML5, CSS3, JS and web fundamentals.</div><div class="tch"><span class="chip g">Certified ✓</span></div></div></div>
+        <div class="book"><div class="spine" style="width:50px;height:158px;background:#200a0a"><div class="spine-top"></div><div class="st">Python</div></div><div class="tip"><div class="tc">Certification</div><div class="tt">Python Programming</div><div class="tb">Certified in Python 3 — syntax, data structures and apps.</div><div class="tch"><span class="chip g">Certified ✓</span></div></div></div>
+      </div><div class="plank"></div><div class="plank-sh"></div></div>
+    </div>
+    <div class="shelf-u sr d2">
+      <div class="shelf-hdr"><span class="sh-n">—</span><span class="sh-t">Languages</span><span class="sh-c">4 vol</span></div>
+      <div class="shelf-frame"><div class="books">
+        <div class="book"><div class="spine" style="width:52px;height:152px;background:#1a1808"><div class="spine-top"></div><div class="st">Hindi</div></div><div class="tip"><div class="tc">Language</div><div class="tt">Hindi</div><div class="tb">First language. Native fluency in speaking, reading and writing.</div><div class="tch"><span class="chip g">Native</span></div></div></div>
+        <div class="book"><div class="spine" style="width:50px;height:144px;background:#0a1628"><div class="spine-top"></div><div class="st">English</div></div><div class="tip"><div class="tc">Language</div><div class="tt">English</div><div class="tb">Professional proficiency for all academic and technical work.</div><div class="tch"><span class="chip">Professional</span></div></div></div>
+        <div class="book"><div class="spine" style="width:48px;height:138px;background:#0e1e08"><div class="spine-top"></div><div class="st">Gujarati</div></div><div class="tip"><div class="tc">Language</div><div class="tt">Gujarati</div><div class="tb">Fully fluent regional language of Gujarat.</div><div class="tch"><span class="chip g">Fluent</span></div></div></div>
+        <div class="book"><div class="spine" style="width:46px;height:132px;background:#200a18"><div class="spine-top"></div><div class="st">Sindhi</div></div><div class="tip"><div class="tc">Language</div><div class="tt">Sindhi</div><div class="tb">Heritage language. Conversational fluency.</div><div class="tch"><span class="chip">Conversational</span></div></div></div>
+      </div><div class="plank"></div><div class="plank-sh"></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- GITHUB -->
+<div class="sec-wrap" id="github">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">04</span><span class="sec-title">GitHub Highlights</span></div>
+  <div class="gh-card sr d1">
+    <div>
+      <div class="gh-eyebrow">Open Source · Public Repos</div>
+      <div class="gh-title">github.com/Suraj-Pamnani</div>
+      <div class="gh-desc">Browse all repositories, commit history and project code. Every project is documented and publicly accessible — built for real-world use, not just tutorials.</div>
+      <div class="gh-stats">
+        <div><div class="gh-sn">3+</div><div class="gh-sl">Public Repos</div></div>
+        <div><div class="gh-sn">2024</div><div class="gh-sl">Member Since</div></div>
+        <div><div class="gh-sn">∞</div><div class="gh-sl">Curiosity</div></div>
+      </div>
+    </div>
+    <a class="gh-btn" href="https://github.com/Suraj-Pamnani" target="_blank">⌥ View GitHub Profile</a>
+  </div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<div class="sec-wrap" id="contact">
+<section class="sec">
+  <div class="sec-top sr"><span class="sec-num">05</span><span class="sec-title">Get In Touch</span></div>
+  <p class="sr" style="font-size:.9rem;color:var(--muted);max-width:460px;line-height:1.8;font-weight:300;margin-bottom:1.4rem">Open to internships, freelance work and interesting collaborations. I reply within 24 hours.</p>
+  <div class="cta-row sr d1">
+    <a class="btn-p" href="mailto:Srjpamnani@gmail.com">Email Me</a>
+    <a class="btn-o" href="https://linkedin.com/in/surajpamnani-945a58373" target="_blank">LinkedIn ↗</a>
+    <a class="btn-g" href="/mnt/user-data/uploads/Suraj_Resume.pdf" download="Suraj_Pamnani_Resume.pdf">Download Resume ↓</a>
+  </div>
+  <div class="cgrid sr d2">
+    <div class="cc"><div class="ccl">Email</div><div class="ccv"><a href="mailto:Srjpamnani@gmail.com">Srjpamnani@gmail.com</a></div></div>
+    <div class="cc"><div class="ccl">Phone</div><div class="ccv">+91 9727557379</div></div>
+    <div class="cc"><div class="ccl">GitHub</div><div class="ccv"><a href="https://github.com/Suraj-Pamnani" target="_blank">github.com/Suraj-Pamnani ↗</a></div></div>
+    <div class="cc"><div class="ccl">LinkedIn</div><div class="ccv"><a href="https://linkedin.com/in/surajpamnani-945a58373" target="_blank">surajpamnani ↗</a></div></div>
+  </div>
+</section>
+</div>
+
+<div class="footer">
+  <span class="ft">© 2026 Suraj Pamnani</span>
+  <span class="ft"><span class="blink" style="display:inline-block;margin-right:6px"></span>Open to Internships · Summer 2026 · Ahmedabad</span>
+</div>
+
+<script>
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function toggleMode(){document.body.classList.toggle('dark')}
+const roles=['Aspiring Software Developer','Web App Builder','Python Developer','Database Designer','CS Student @ Indus University'];
+let ri=0,ci=0,del=false,tw=document.getElementById('typewriter');
+function type(){
+  const cur=roles[ri];
+  tw.innerHTML=(del?cur.slice(0,ci):cur.slice(0,ci))+'<span class="cur"></span>';
+  if(!del){ci++;if(ci>cur.length){del=true;setTimeout(type,1800);return}}
+  else{ci--;if(ci<0){ci=0;del=false;ri=(ri+1)%roles.length}}
+  setTimeout(type,del?38:76);
+}
+setTimeout(type,600);
+const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('show')}),{threshold:.07});
+document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+document.querySelectorAll('.book').forEach(book=>{
+  book.addEventListener('mouseenter',()=>{
+    const s=[...book.parentElement.querySelectorAll('.book')],hi=s.indexOf(book);
+    s.forEach((b,i)=>{if(b!==book){const d=Math.abs(i-hi),dir=i<hi?-1:1,px=d===1?10:d===2?5:0;b.style.transform=`translateX(${dir*px}px)`;b.style.transition='transform .35s cubic-bezier(.25,1,.5,1)'}});
+  });
+  book.addEventListener('mouseleave',()=>{[...book.parentElement.querySelectorAll('.book')].forEach(b=>{b.style.transform='';b.style.transition=''})});
+  book.addEventListener('click',()=>{const was=book.classList.contains('active');[...book.parentElement.querySelectorAll('.book')].forEach(b=>b.classList.remove('active'));if(!was)book.classList.add('active')});
+});
+</script>
+</body>
+</html>
